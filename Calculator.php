@@ -1,20 +1,12 @@
 <?php
-class Calculator
+class Comprobador
 {
  
-    public function add($a, $b)
+    public function isPair($a)
     {
-        return $a + $b;
+        if ($a%2==0)
+         return true;
+        else
+         return false;
     }
-
-    public function multiply($a, $b)
-    {
-        return $a * $b;
-    }
-
-    public function division($a, $b)
-    {
-        return $a / $b;
-    }
- 
 }
