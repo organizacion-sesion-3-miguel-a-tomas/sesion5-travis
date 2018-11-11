@@ -1,37 +1,47 @@
 <?php
 use PHPUnit\Framework\TestCase;
-require 'Calculator.php';
+require 'Comprobador.php';
 
-class CalculatorTests extends TestCase
+class ComprobadorTests extends TestCase
 {
-    private $calculator;
+    private $comprobador;
  
     protected function setUp()
     {
-        $this->calculator = new Calculator();
+        $this->comprobador = new Comprobador();
     }
  
     protected function tearDown()
     {
-        $this->calculator = NULL;
+        $this->comprobador = NULL;
     }
  
-    public function testAdd()
+    public function testPair1()
     {
-        $result = $this->calculator->add(1, 2);
-        $this->assertEquals(3, $result);
+        $result = $this->comprobador->isPair(1);
+        $this->assertEquals(false, $result);
     }
 
-    public function testMultiply()
+    public function testPair2()
     {
-        $result = $this->calculator->multiply(5, 2);
-        $this->assertEquals(10, $result);
+        $result = $this->comprobador->isPair(2);
+        $this->assertEquals(true, $result);
+    }
+    public function testPair3()
+    {
+        $result = $this->comprobador->isPair(3);
+        $this->assertEquals(false, $result);
     }
 
-    public function testDivision()
+    public function testPair4()
     {
-        $result = $this->calculator->division(10, 2);
-        $this->assertEquals(5, $result);
+        $result = $this->comprobador->isPair(4);
+        $this->assertEquals(true, $result);
+    }
+    public function testPair5()
+    {
+        $result = $this->comprobador->isPair(5);
+        $this->assertEquals(false, $result);
     }
  
 }
